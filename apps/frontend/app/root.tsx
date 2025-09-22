@@ -6,17 +6,20 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import 'bootstrap/dist/css/bootstrap.min.css'; // 👈 Add this at the top
 
 import type { Route } from "./+types/root";
 import "./app.css";
 import Navbar from "./components/Navbar";
+import { Provider } from 'react-redux';
+import { store } from "./store";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
     href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
+    crossOrigin: "anonymous"
   },
   {
     rel: "stylesheet",
@@ -33,11 +36,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
-        <Navbar/>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
+      <body className="h-[100vh]">
+        <Provider store={store}>
+          <Navbar />
+          {children}
+          <ScrollRestoration />
+          <Scripts />
+        </Provider>
       </body>
     </html>
   );

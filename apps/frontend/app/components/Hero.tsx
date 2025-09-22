@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router'
 const Hero = () => {
     const navigate = useNavigate()
     return (
-        <div className="relative h-[70vh] w-[90vw] mx-auto top-20">
+        <div className="relative h-[70vh] w-[90vw] mx-auto">
             {/* Video background */}
             <video
                 src="https://n8n.io/videos/home-intro.mp4"

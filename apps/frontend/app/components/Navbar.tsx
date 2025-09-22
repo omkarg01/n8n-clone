@@ -9,13 +9,13 @@ const Navbar = () => {
     const navigate = useNavigate()
 
     return (
-        <div className='flex justify-between items-center p-4 text-gray-300 border-b border-white/10 w-full fixed'>
+        <div className='flex justify-between items-center p-4 text-gray-300 border-b border-white/10 w-full h-[10vh]'>
             <div className='flex space-x-10 text-grey'>
                 <div>
                     <N8nlogo />
                 </div>
-                <div>
-                    Product
+                <div onClick={() => navigate("/dashboard")}>
+                    Dashboard
                 </div>
                 <div>
                     Use cases

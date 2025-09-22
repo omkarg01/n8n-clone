@@ -5,6 +5,7 @@ const Signup = () => {
 
 
   const url = import.meta.env.VITE_BACKEND_URL;
+  console.log("url", url)
   const navigate = useNavigate()
   const [formData, setFormData] = React.useState({ email: "", password: "" });
 
@@ -19,7 +20,6 @@ const Signup = () => {
         navigate("/signin");
     });
   }
-
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-white"
